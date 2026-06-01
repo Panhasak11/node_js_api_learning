@@ -7,10 +7,11 @@ const getAllUsers = async (req, res) => {
 };
 
 const createUser = async(req, res) => {
-    const {name, email, password} = req.body;
+    const {name, email, password, roleId} = req.body;
     const user = await prisma.user.create({
         data:{
             name,
+            roleId,
             email,
             password
         },
